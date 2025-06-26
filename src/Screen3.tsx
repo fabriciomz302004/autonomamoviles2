@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { supabase } from '../supabase/Config';
 
-// Define el tipo de tarea
+
 type Tarea = {
   id: number;
   user_id: string;
@@ -76,6 +76,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#f2f2f2',
     fontSize: 16,
   },
-  botonEditar: { backgroundColor: '#ffd700', padding: 12, borderRadius: 6, marginTop: 20, width: '100%' },
-  textoBoton: { color: '#222', fontWeight: 'bold', textAlign: 'center', fontSize: 16 },
+  botonEditar: {
+    backgroundColor: '#ffd700',
+    padding: 12, borderRadius: 6,
+    marginTop: 20, width: '100%'
+  },
+  textoBoton: {
+    color: '#222',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 16
+  },
 });

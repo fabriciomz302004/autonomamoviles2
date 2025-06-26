@@ -14,6 +14,7 @@ export default function Screen4() {
       Alert.alert('Sesión cerrada', '¡Hasta pronto!');
       navigation.reset({
         index: 0,
+        // @ts-ignore
         routes: [{ name: 'Login' }],
       });
     }
@@ -37,7 +38,7 @@ export default function Screen4() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8F9FA', // Fondo claro
+    backgroundColor: '#F8F9FA', 
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
@@ -47,30 +48,30 @@ const styles = StyleSheet.create({
     height: 120,
     resizeMode: 'contain',
     marginBottom: 20,
-    tintColor: '#2E86C1', // Azul para el ícono
+    tintColor: '#2E86C1', 
   },
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#2E86C1', // Azul principal
+    color: '#2E86C1',
     marginBottom: 5,
   },
   subtitle: {
     fontSize: 16,
-    color: '#27AE60', // Verde secundario
+    color: '#27AE60', 
     marginBottom: 30,
     textAlign: 'center',
   },
   loginButton: {
-    backgroundColor: '#27AE60', // Verde principal
+    backgroundColor: '#27AE60',
     width: "100%",
     padding: 15,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 20,
-    elevation: 3, // Sombra en Android
-    shadowColor: '#000', // Sombra en iOS
+    elevation: 3, 
+    shadowColor: '#000', 
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 2,

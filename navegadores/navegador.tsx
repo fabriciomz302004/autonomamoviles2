@@ -42,7 +42,7 @@ function MyTabs(){
         <Tab.Navigator >
             <Tab.Screen name="Lista"component={Screen1}/>
             <Tab.Screen name="crear"component={Screen2}/>
-            <Tab.Screen name="Screen4"component={Screen4}/>
+            <Tab.Screen name="Perfil"component={Screen4}/>
             
             
             

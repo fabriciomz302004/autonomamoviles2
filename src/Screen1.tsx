@@ -13,7 +13,7 @@ type Tarea = {
 
 export default function Screen1() {
   const [tareas, setTareas] = useState<Tarea[]>([]);
-  const user_id = 'userId1'; // Cambia por el id real del usuario
+  const user_id = 'userId1';
   const navigation = useNavigation();
 
   const obtenerTareas = async () => {
@@ -36,7 +36,7 @@ export default function Screen1() {
   useEffect(() => {
     obtenerTareas();
 
-    // SUSCRIPCIÓN REALTIME
+
     const channel = supabase
       .channel('public:tasks')
       .on(
@@ -56,7 +56,7 @@ export default function Screen1() {
   const eliminarTarea = async (id: number) => {
     const { error } = await supabase.from('tasks').delete().eq('id', id);
     if (!error) {
-      // La lista se actualizará automáticamente por realtime
+
       Alert.alert('Eliminado', 'Tarea eliminada');
     } else {
       Alert.alert('Error', 'No se pudo eliminar la tarea');
@@ -98,12 +98,45 @@ export default function Screen1() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: '#fff' },
-  header: { fontSize: 24, fontWeight: 'bold', marginBottom: 20, textAlign: 'center' },
-  item: { backgroundColor: '#f2f2f2', padding: 16, borderRadius: 8, marginBottom: 12 },
-  titulo: { fontSize: 18, fontWeight: 'bold' },
-  botones: { flexDirection: 'row', marginTop: 10 },
-  botonEditar: { backgroundColor: '#ffd700', padding: 8, borderRadius: 6, marginRight: 10 },
-  botonEliminar: { backgroundColor: '#ff5252', padding: 8, borderRadius: 6 },
-  textoBoton: { color: '#222', fontWeight: 'bold' },
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#fff'
+  },
+  header: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    textAlign: 'center'
+  },
+  item: {
+    backgroundColor: '#f2f2f2',
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 12
+  },
+  titulo:
+  {
+    fontSize: 18,
+    fontWeight: 'bold'
+  },
+  botones: {
+    flexDirection: 'row',
+    marginTop: 10
+  },
+  botonEditar: {
+    backgroundColor: '#ffd700',
+    padding: 8,
+    borderRadius: 6,
+    marginRight: 10
+  },
+  botonEliminar: {
+    backgroundColor: '#ff5252',
+    padding: 8,
+    borderRadius: 6
+  },
+  textoBoton: {
+    color: '#222',
+    fontWeight: 'bold'
+  },
 });

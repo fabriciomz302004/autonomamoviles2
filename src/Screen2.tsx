@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image, Alert } from 'react-native';
 import React, { useState } from 'react';
-import { Picker } from '@react-native-picker/picker'; // Instala este paquete si no lo tienes
+import { Picker } from '@react-native-picker/picker'; 
 import { supabase } from '../supabase/Config';
 
 export default function OperacionesScreen() {
@@ -13,7 +13,7 @@ export default function OperacionesScreen() {
       Alert.alert('Error', 'Completa todos los campos');
       return;
     }
-    // Reemplaza 'user_id' por el id real del usuario autenticado
+   
     const user_id = 'userId1';
     const { error } = await supabase
       .from('tasks')
@@ -63,7 +63,7 @@ export default function OperacionesScreen() {
 }
 
 const styles = StyleSheet.create({
-  // ...existing code...
+  
   container: {
     flex: 1,
     justifyContent: 'center',
